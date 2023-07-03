@@ -87,4 +87,9 @@ dependencies {
     //hilt
     implementation "com.google.dagger:hilt-android:2.44"
     kapt "com.google.dagger:hilt-android-compiler:2.44"
+    // kakao
+    implementation "com.kakao.sdk:v2-user:2.14.0" // 카카오 로그인
+    implementation "com.kakao.sdk:v2-talk:2.14.0" // 친구, 메시지(카카오톡)
+    implementation "com.kakao.sdk:v2-share:2.14.0" // 메시지(카카오톡 공유)
+
 }
