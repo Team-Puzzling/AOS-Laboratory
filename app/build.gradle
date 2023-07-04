@@ -24,7 +24,12 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "NATIVE_APP_KEY", properties["native.app.key"]
+
+        manifestPlaceholders["NATIVE_APP_KEY"] =
+                properties.getProperty("native.app.key.no.quotes")
     }
+
+
 
     buildTypes {
         release {
