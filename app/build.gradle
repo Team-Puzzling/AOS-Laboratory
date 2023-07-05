@@ -100,5 +100,7 @@ dependencies {
     implementation "com.kakao.sdk:v2-user:2.14.0" // 카카오 로그인
     implementation "com.kakao.sdk:v2-talk:2.14.0" // 친구, 메시지(카카오톡)
     implementation "com.kakao.sdk:v2-share:2.14.0" // 메시지(카카오톡 공유)
+    //EncryptedSharedPreference
+    implementation "androidx.security:security-crypto-ktx:1.1.0-alpha06"
 
 }

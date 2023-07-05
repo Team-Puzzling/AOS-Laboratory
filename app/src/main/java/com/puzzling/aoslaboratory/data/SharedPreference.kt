@@ -2,18 +2,40 @@ package com.puzzling.aoslaboratory.data
 
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.security.crypto.EncryptedSharedPreferences
+import androidx.security.crypto.MasterKey
 
-class SharedPreference(context: Context) {
-    private val prefs: SharedPreferences =
-        context.getSharedPreferences("puzzling", Context.MODE_PRIVATE)
+class SharedPreferences() {
+    private lateinit var preferences: SharedPreferences
+
+    fun init(context: Context) {
+        val masterKeyAlias = MasterKey
+            .Builder(context, MasterKey.DEFAULT_MASTER_KEY_ALIAS)
+            .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
+            .build()
+
+        preferences = EncryptedSharedPreferences.create(
+            context,
+            "encrypted_settings",
+            masterKeyAlias,
+            EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+            EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM,
+        )
+    }
 
     fun setAccessToken(input: String) {
-        val editor: SharedPreferences.Editor = prefs.edit()
+        val editor: SharedPreferences.Editor = preferences.edit()
         editor.putString("ACCESS_TOKEN", input)
         editor.commit()
     }
 
     fun getAccessToken(): String {
-        return prefs.getString("ACCESS_TOKEN", "").toString()
+        return preferences.getString("ACCESS_TOKEN", "").toString()
+    }
+
+    fun clear() {
+        val editor: SharedPreferences.Editor = preferences.edit()
+        editor.clear()
+        editor.commit()
     }
 }
