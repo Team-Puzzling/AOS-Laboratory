@@ -19,6 +19,14 @@
             android:name=".presentation.main.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".presentation.main.LoginActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,8 +37,6 @@
                     android:scheme="kakao${NATIVE_APP_KEY}" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.main.LoginActivity"
-            android:exported="false"/>
         <activity android:name=".presentation.main.LogoutActivity"
             android:exported="false"/>
     </application>
