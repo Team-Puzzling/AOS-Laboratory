@@ -1,4 +1,4 @@
-package com.puzzling.aoslaboratory.data
+package com.puzzling.aoslaboratory.data.source.local
 
 import android.content.Context
 import android.content.SharedPreferences
