@@ -24,6 +24,7 @@
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
+
         <activity
             android:name=".presentation.register.ExampleHomeActivity"
             android:exported="true"
@@ -49,11 +50,12 @@
         <activity
             android:name=".presentation.main.MainActivity"
             android:exported="false" />
-        <activity android:name=".presentation.main.LoginActivity"
-            android:exported="true">
-        </activity>
-        <activity android:name=".presentation.main.LogoutActivity"
-            android:exported="false"/>
+        <activity
+            android:name=".presentation.main.LoginActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".presentation.main.LogoutActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
