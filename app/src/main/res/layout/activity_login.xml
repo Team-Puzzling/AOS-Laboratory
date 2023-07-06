@@ -12,5 +12,15 @@
         android:layout_height="match_parent"
         tools:context=".presentation.main.LoginActivity">
 
+        <Button
+            android:id="@+id/btn_login_kakao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="카카오 로그인"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
