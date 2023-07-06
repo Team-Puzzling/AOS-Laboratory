@@ -1,6 +1,6 @@
 package com.puzzling.aoslaboratory
 
-import org.junit.Assert.*
+import junit.framework.TestCase.assertEquals
 import org.junit.Test
 
 /**

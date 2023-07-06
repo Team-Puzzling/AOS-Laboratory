@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AOS Laboratory</string>
+    <string name="tv_dialog_title">참여 코드 생성 완료!</string>
+    <string name="tv_dialog_code">ABCDEFG</string>
+    <string name="btn_dialog_copy">참여 코드 복사</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_home_register">프로젝트 등록하기</string>
+    <string name="tv_input_code">초대 코드 입력</string>
+    <string name="btn_home_input">초대 코드 입력하기</string>
 </resources>
