@@ -10,6 +10,9 @@ plugins {
     id "org.jlleitschuh.gradle.ktlint" version "10.3.0"
 }
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
 android {
     namespace 'com.puzzling.aoslaboratory'
     compileSdk 33
@@ -22,7 +25,12 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "NATIVE_APP_KEY", properties["native.app.key"]
+
+        manifestPlaceholders["NATIVE_APP_KEY"] =
+                properties.getProperty("native.app.key.no.quotes")
     }
+
 
     buildTypes {
         release {
@@ -89,4 +97,13 @@ dependencies {
     //hilt
     implementation "com.google.dagger:hilt-android:2.44"
     kapt "com.google.dagger:hilt-android-compiler:2.44"
+    // kakao
+    implementation "com.kakao.sdk:v2-user:2.14.0" // 카카오 로그인
+    implementation "com.kakao.sdk:v2-talk:2.14.0" // 친구, 메시지(카카오톡)
+    implementation "com.kakao.sdk:v2-share:2.14.0" // 메시지(카카오톡 공유)
+    //EncryptedSharedPreference
+    implementation "androidx.security:security-crypto-ktx:1.1.0-alpha06"
+    // Timbaer
+    implementation 'com.jakewharton.timber:timber:5.0.1'
+
 }
